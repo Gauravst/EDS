@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  padding: 2px;
+}
+
+.version {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.container {
+  background: #fff;
+  padding: 5px 20px 0px 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  width: 300px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > h2 {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.header > h2 > span {
+  color: #087ea4;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.header > img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.selectContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.selectContainer > img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selectContainer > input {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+button {
+  background-color: #087ea4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #065b78;
+}

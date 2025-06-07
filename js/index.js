@@ -5,7 +5,14 @@ const fetchRestoreBtn = document.getElementById("fetchRestore");
 const restoreBtn = document.getElementById("restore");
 const versionsSelect = document.getElementById("versions");
 
+const backupTab = document.getElementById("backupTab");
+const fileTab = document.getElementById("fileTab");
+const backupContent = document.getElementById("backupContent");
+const filesContent = document.getElementById("filesContent");
+
 const filename = "eds-backup.json";
+
+const fileData = [{ name: "Main" }, { name: "Project Sanggo" }];
 
 function setLoading(isLoading) {
   backupBtn.disabled = isLoading;
@@ -124,6 +131,7 @@ fetchRestoreBtn.onclick = async () => {
   clearVersions();
 
   if (!isValidInput(token, repo)) return;
+  await saveTokenAndRepo(token, repo);
 
   setLoading(true);
   try {
@@ -253,4 +261,22 @@ restoreBtn.onclick = async () => {
     restoreBtn.disabled = false;
   }
   setLoading(false);
+};
+
+backupTab.onclick = async () => {
+  backupTab.classList.add("selectedTab");
+  fileTab.classList.remove("selectedTab");
+  backupContent.classList.add("showContent");
+  backupContent.classList.remove("removeContent");
+  filesContent.classList.add("removeContent");
+  filesContent.classList.remove("showContent");
+};
+
+fileTab.onclick = async () => {
+  fileTab.classList.add("selectedTab");
+  backupTab.classList.remove("selectedTab");
+  filesContent.classList.add("showContent");
+  filesContent.classList.remove("removeContent");
+  backupContent.classList.add("removeContent");
+  backupContent.classList.remove("showContent");
 };

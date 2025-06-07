@@ -1,0 +1,38 @@
+@import "./backup.css";
+@import "./file.css";
+@import "./dialog.css";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  padding: 2px;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: row;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.space {
+  justify-content: space-between;
+  align-items: center;
+}

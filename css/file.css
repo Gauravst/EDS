@@ -1,0 +1,86 @@
+#filesContent {
+  width: 100%;
+}
+
+#filesContent > ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.fileListItem {
+  width: 100%;
+  height: 45px;
+  padding: 5px 13px;
+  margin: 5px 0px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 9px;
+  border: 1px solid #087ea4;
+  cursor: pointer;
+}
+
+.fileListItem:hover {
+  background-color: #087ea4;
+  color: #fff;
+}
+
+.fileListItem > img {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.fileListItemSeleted {
+  background-color: #087ea4;
+  color: #fff;
+}
+
+.fileListItem > p {
+  font-size: 13px;
+}
+
+.fileListItemButtons {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.fileListItemButtons > img {
+  height: 20px;
+  width: 20px;
+}
+
+#createNewFile {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #087ea4;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+}
+
+.createNewFileLine {
+  height: 100%;
+  width: 2px;
+  background-color: #fff;
+  border-radius: 9px;
+  height: 20px;
+}
+
+.createNewFileLine:nth-child(2) {
+  position: fixed;
+  rotate: 90deg;
+}

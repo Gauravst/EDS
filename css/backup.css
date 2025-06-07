@@ -1,18 +1,3 @@
-html {
-  box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: sans-serif;
-  background: #fff;
-  padding: 2px;
-}
-
 .version {
   width: 100%;
   text-align: center;
@@ -24,7 +9,8 @@ body {
   padding: 5px 20px 0px 20px;
   border-radius: 10px;
   border: 1px solid gray;
-  width: 300px;
+  width: 350px;
+  position: relative;
 }
 
 .header {
@@ -73,6 +59,7 @@ button {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  height: 40px;
 }
 
 .selectContainer > input {
@@ -89,4 +76,46 @@ button {
 
 button:hover {
   background-color: #065b78;
+}
+
+.tab {
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border: 1px solid #087ea4;
+  border-radius: 9px;
+  margin-bottom: 20px;
+}
+
+.backupTab {
+  height: 100%;
+  width: 50%;
+  padding: 0px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.selectedTab {
+  background-color: #087ea4;
+  color: #fff;
+  border-radius: 9px;
+}
+
+.fileTab {
+  height: 100%;
+  width: 50%;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.removeContent {
+  display: none;
+}
+
+.showContent {
+  display: flex;
+  flex-direction: column;
 }

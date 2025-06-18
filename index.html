@@ -37,84 +37,38 @@
       </div>
 
       <div id="filesContent" class="removeContent">
-        <ul>
-          <li class="fileListItem fileListItemSeleted flex">
-            <img src="icons/file.svg" />
-            <p>File 01</p>
-            <div class="fileListItemButtons">
-              <img src="icons/save.svg"
-            </div>
-          </li>
-
-          <li class="fileListItem flex">
-            <img src="icons/file.svg" />
-            <p>File 01</p>
-            <div class="fileListItemButtons">
-              <img src="icons/save.svg"
-            </div>
-          </li>
-
-          <li class="fileListItem flex">
-            <img src="icons/file.svg" />
-            <p>File 02</p>
-            <div class="fileListItemButtons">
-              <img src="icons/save.svg"
-            </div>
-          </li>
-
-          <li class="fileListItem flex">
-            <img src="icons/file.svg" />
-            <p>File 03</p>
-            <div class="fileListItemButtons">
-              <img src="icons/save.svg"
-            </div>
-          </li>
-
-          <li class="fileListItem flex">
-            <img src="icons/file.svg" />
-            <p>File 04</p>
-            <div class="fileListItemButtons">
-              <img src="icons/save.svg"
-            </div>
-          </li>
-
-          <li class="fileListItem flex">
-            <img src="icons/file.svg" />
-            <p>File 05</p>
-            <div class="fileListItemButtons">
-              <img src="icons/save.svg"
-            </div>
-          </li>
-        </ul>
+        <ul id="filesContentUl"></ul>
 
         <div id="createNewFile">
           <div class="createNewFileLine"></div>
           <div class="createNewFileLine"></div>
         </div>
-
       </div>
       <p class="version">v2.0.0</p>
-<div id="dialog" class="dialog">
-  <div class="dialogContainer">
-    <div class="dialogHeading">
-      <h2 id="dialogHeading">Save Changes</h2>
-      <p id="dialogPera">Save the changes to avoid losing your data.</p>
-    </div>
+      <div id="dialog" class="dialog">
+        <div class="dialogContainer">
+          <div class="dialogHeading">
+            <h2 id="dialogHeading">Save Changes</h2>
+            <p id="dialogPera">Save the changes to avoid losing your data.</p>
+          </div>
 
-    <div>
-      <label>File Name</label>
-      <input id="dialogFileNameInput" type="text" placeholder="file01" />
-       <p id="dialogFileNameInputPera">File Name - <span id="dialogFileNameOutput"></span></p>
-    </div>
+          <div>
+            <label>File Name</label>
+            <input id="dialogFileNameInput" type="text" placeholder="file01" />
+            <p id="dialogFileNameInputPera">
+              File Name - <span id="dialogFileNameOutput"></span>
+            </p>
+          </div>
 
-    <div class="dialogButton">
-      <button id="dialogButtonCancel">Cancel</button>
-      <button id="dialogButtonSave">Save</button>
-    </div>
-  </div>
-</div>
+          <div class="dialogButton">
+            <button id="dialogButtonCancel">Cancel</button>
+            <button id="dialogButtonSave">Save</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/index.js"></script>
     <script src="js/file.js"></script>
+    <script src="js/tab.js"></script>
   </body>
 </html>

@@ -21,6 +21,7 @@
   align-items: center;
   border-radius: 9px;
   border: 1px solid #087ea4;
+  /* border: 1px solid #5151cd; */
   cursor: pointer;
 }
 
@@ -83,4 +84,13 @@
 .createNewFileLine:nth-child(2) {
   position: fixed;
   rotate: 90deg;
+}
+
+.hideSaveBtn {
+  display: none;
+}
+
+.infoPera {
+  text-align: center;
+  padding: 0px 25px;
 }

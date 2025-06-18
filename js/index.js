@@ -1,3 +1,4 @@
+// backup and restore elements
 const tokenInput = document.getElementById("token");
 const repoInput = document.getElementById("repo");
 const backupBtn = document.getElementById("backup");
@@ -5,6 +6,7 @@ const fetchRestoreBtn = document.getElementById("fetchRestore");
 const restoreBtn = document.getElementById("restore");
 const versionsSelect = document.getElementById("versions");
 
+// tab elements
 const backupTab = document.getElementById("backupTab");
 const fileTab = document.getElementById("fileTab");
 const backupContent = document.getElementById("backupContent");
@@ -12,25 +14,23 @@ const filesContent = document.getElementById("filesContent");
 
 const filename = "eds-backup.json";
 
-const fileData = [{ name: "Main" }, { name: "Project Sanggo" }];
-
-function setLoading(isLoading) {
+const setLoading = (isLoading) => {
   backupBtn.disabled = isLoading;
   restoreBtn.disabled = isLoading;
   tokenInput.disabled = isLoading;
   repoInput.disabled = isLoading;
   versionsSelect.disabled = isLoading;
-}
+};
 
-function clearVersions() {
+const clearVersions = () => {
   versionsSelect.innerHTML = '<option value="">Select a version</option>';
-}
+};
 
-function isValidInput(token, repo) {
+const isValidInput = (token, repo) => {
   return token && repo;
-}
+};
 
-async function getSha(token, repo, path) {
+const getSha = async (token, repo, path) => {
   try {
     const res = await fetch(
       `https://api.github.com/repos/${repo}/contents/${path}`,
@@ -44,15 +44,15 @@ async function getSha(token, repo, path) {
   } catch {
     return null;
   }
-}
+};
 
-async function saveTokenAndRepo(token, repo) {
+const saveTokenAndRepo = async (token, repo) => {
   const existingToken = localStorage.getItem("githubToken");
   const existingRepo = localStorage.getItem("githubRepo");
 
   if (existingToken !== token) localStorage.setItem("githubToken", token);
   if (existingRepo !== repo) localStorage.setItem("githubRepo", repo);
-}
+};
 
 // Load saved values
 const existingToken = localStorage.getItem("githubToken");
@@ -90,6 +90,7 @@ backupBtn.onclick = async () => {
       backupBtn.disabled = false;
       return;
     }
+    console.log("backupBtn click data =--", drawingData);
 
     const sha = await getSha(token, repo, filename);
 
@@ -261,22 +262,4 @@ restoreBtn.onclick = async () => {
     restoreBtn.disabled = false;
   }
   setLoading(false);
-};
-
-backupTab.onclick = async () => {
-  backupTab.classList.add("selectedTab");
-  fileTab.classList.remove("selectedTab");
-  backupContent.classList.add("showContent");
-  backupContent.classList.remove("removeContent");
-  filesContent.classList.add("removeContent");
-  filesContent.classList.remove("showContent");
-};
-
-fileTab.onclick = async () => {
-  fileTab.classList.add("selectedTab");
-  backupTab.classList.remove("selectedTab");
-  filesContent.classList.add("showContent");
-  filesContent.classList.remove("removeContent");
-  backupContent.classList.add("removeContent");
-  backupContent.classList.remove("showContent");
 };
